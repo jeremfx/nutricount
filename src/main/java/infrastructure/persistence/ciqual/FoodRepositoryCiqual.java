@@ -50,7 +50,7 @@ public class FoodRepositoryCiqual implements FoodRepository {
                 .findFirst()
                 .map(c -> c.content)
                 .orElseGet(() -> {
-                    System.out.println("Protein not found for food " + foodCode);
+                    //System.out.println("Protein not found for food " + foodCode);
                     return 0d;
                 });
     }
@@ -65,7 +65,7 @@ public class FoodRepositoryCiqual implements FoodRepository {
                 .findFirst()
                 .map(c -> c.content)
                 .orElseGet(() -> {
-                    System.out.println("Carbohydrates not found for food " + foodCode);
+                    //System.out.println("Carbohydrates not found for food " + foodCode);
                     return 0d;
                 });
     }
@@ -80,7 +80,7 @@ public class FoodRepositoryCiqual implements FoodRepository {
                 .findFirst()
                 .map(c -> c.content)
                 .orElseGet(() -> {
-                    System.out.println("Fats not found for food " + foodCode);
+                    //System.out.println("Fats not found for food " + foodCode);
                     return 0d;
                 });
     }

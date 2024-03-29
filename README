@@ -1,3 +1,8 @@
+# Run project
+
+run userinterface.web.Main
+server starts on HTTP 80
+
 # Deployment
 add shh key to GCP
 ssh user@ip

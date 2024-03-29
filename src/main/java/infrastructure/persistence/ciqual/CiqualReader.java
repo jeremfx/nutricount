@@ -14,12 +14,29 @@ import jakarta.xml.bind.Unmarshaller;
 
 import java.io.InputStream;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 public class CiqualReader {
-    public final List<FoodXml> foodsXml = readFoods().foods;
-    public final List<FoodGroupXml> foodGroupsXml = readFoodGroups().foodGroups;
-    public final List<CompositionXml> compositionsXml = readCompositionsXml().compositions;
-    public final List<ConstantXml> constantsXml = readConstantsXml().constants;
+    public final List<FoodXml> foodsXml;
+    public final List<FoodGroupXml> foodGroupsXml;
+    public final List<CompositionXml> compositionsXml;
+    public final List<ConstantXml> constantsXml;
+
+    public CiqualReader() {
+        CompletableFuture<List<FoodXml>> foodsXmlfuture = CompletableFuture.supplyAsync(() -> readFoods().foods);
+        CompletableFuture<List<FoodGroupXml>> foodGroupsXmlFuture = CompletableFuture.supplyAsync(() -> readFoodGroups().foodGroups);
+        CompletableFuture<List<CompositionXml>> compositionsXmlFuture = CompletableFuture.supplyAsync(() -> readCompositionsXml().compositions);
+        CompletableFuture<List<ConstantXml>> constantsXmlFuture = CompletableFuture.supplyAsync(() -> readConstantsXml().constants);
+        try {
+            foodsXml = foodsXmlfuture.get();
+            foodGroupsXml = foodGroupsXmlFuture.get();
+            compositionsXml = compositionsXmlFuture.get();
+            constantsXml = constantsXmlFuture.get();
+        } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     private FoodsXmlFile readFoods() {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("ciqual/alim_2020_07_07.xml");
@@ -44,6 +61,7 @@ public class CiqualReader {
             throw new RuntimeException(e);
         }
     }
+
     private CompositionsXmlFile readCompositionsXml() {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("ciqual/compo_2020_07_07.xml");
         JAXBContext jaxbContext = null;
