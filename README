@@ -1,6 +1,6 @@
 # Run project
 
-run userinterface.web.Main
+run userinterface.web.technical.Main
 server starts on HTTP 80
 
 # Deployment

@@ -1,20 +1,21 @@
 package userinterface.web;
 
 import core.domain.food.Ingredient;
-import core.domain.food.Recipe;
-import userinterface.web.addingredient.AddIngredientForm;
+import core.domain.food.Recette;
+import userinterface.web.rename.RenameForm;
 import userinterface.web.resizeingredient.ResizeIngredientForm;
+import userinterface.web.technical.HtmlFragment;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class RecipePage implements HtmlFragment {
 
-    private final Recipe recipe;
+    private final Recette recette;
     private final SearchResult searchResult;
 
-    public RecipePage(SearchResult searchResult, Recipe recipe) {
-        this.recipe = recipe;
+    public RecipePage(SearchResult searchResult, Recette recette) {
+        this.recette = recette;
         this.searchResult = searchResult;
     }
 
@@ -28,18 +29,28 @@ public class RecipePage implements HtmlFragment {
 
     private String renderRecipe() {
         return """
-                <h3><a href="/recipes/%s">Recipe n° %s</a></h3>
+                %s
                 <ol>
                 %s
                 </ol>
                 %s
-                """.formatted(recipe.id, recipe.id, renderIngredients(recipe.getIngredients()), renderMacros(recipe));
+                """.formatted(renderName(), renderIngredients(recette.getIngredients()), renderMacros(recette));
     }
 
-    private Object renderMacros(Recipe recipe) {
+    private String renderName() {
+        return "<h3>" + new RenameForm(recette.id, recette.nom).render() + "</h3>";
+    }
+
+    private Object renderMacros(Recette recette) {
         return """
-               <p> Kcal : %s Protéines : %s Glucides : %s  Lipides : %s
-               """.formatted(Math.round(recipe.calories()), Math.round(recipe.proteines()), Math.round(recipe.carbs()), Math.round(recipe.fats()));
+               <p> Kcal : %s Protéines : %s (%s%%) Glucides : %s (%s%%)  Lipides : %s (%s%%)
+               """.formatted(Math.round(recette.calories()),
+                Math.round(recette.proteines()),
+                Math.round(recette.apportCaloriqueEnProteines()),
+                Math.round(recette.glucides()),
+                Math.round(recette.apportCaloriqueEnGlucides()),
+                Math.round(recette.lipides()),
+                Math.round(recette.apportCaloriqueEnLipides()));
 
     }
 
@@ -48,11 +59,11 @@ public class RecipePage implements HtmlFragment {
     }
 
     private String renderIngredient(Ingredient ingredient) {
-        return "<ul>" + ingredient.food().name() + " " + ingredient.size().size() + "g " + renderAddIngredientForm(ingredient) + "</ul>";
+        return "<li>" + ingredient.alimentBasique().nom() + " " + ingredient.poids().size() + "g " + renderAddIngredientForm(ingredient) + "</ul>";
     }
 
     private String renderAddIngredientForm(Ingredient ingredient) {
-        return new ResizeIngredientForm(recipe.id, ingredient.food().id(), ingredient.size()).render();
+        return new ResizeIngredientForm(recette.id, ingredient.alimentBasique().id(), ingredient.poids()).render();
     }
 
 }

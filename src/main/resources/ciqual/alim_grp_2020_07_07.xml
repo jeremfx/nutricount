@@ -42,7 +42,7 @@
       <alim_ssgrp_nom_eng> dishes </alim_ssgrp_nom_eng>
       <alim_ssssgrp_code> 010302 </alim_ssssgrp_code>
       <alim_ssssgrp_nom_fr> plats de viande et féculents </alim_ssssgrp_nom_fr>
-      <alim_ssssgrp_nom_eng> meat dishes, with starchy food </alim_ssssgrp_nom_eng>
+      <alim_ssssgrp_nom_eng> meat dishes, with starchy alimentBasique </alim_ssssgrp_nom_eng>
    </ALIM_GRP>
    <ALIM_GRP>
       <alim_grp_code> 01 </alim_grp_code>
@@ -75,7 +75,7 @@
       <alim_ssgrp_nom_eng> dishes </alim_ssgrp_nom_eng>
       <alim_ssssgrp_code> 010305 </alim_ssssgrp_code>
       <alim_ssssgrp_nom_fr> plats de poisson et féculents </alim_ssssgrp_nom_fr>
-      <alim_ssssgrp_nom_eng> fish dishes, with starchy food </alim_ssssgrp_nom_eng>
+      <alim_ssssgrp_nom_eng> fish dishes, with starchy alimentBasique </alim_ssssgrp_nom_eng>
    </ALIM_GRP>
    <ALIM_GRP>
       <alim_grp_code> 01 </alim_grp_code>
@@ -1425,7 +1425,7 @@
       <alim_grp_nom_eng> miscellaneous </alim_grp_nom_eng>
       <alim_ssgrp_code> 1008 </alim_ssgrp_code>
       <alim_ssgrp_nom_fr> denrées destinées à une alimentation particulière </alim_ssgrp_nom_fr>
-      <alim_ssgrp_nom_eng> foods for particular nutritional uses </alim_ssgrp_nom_eng>
+      <alim_ssgrp_nom_eng> alimentBasiques for particular nutritional uses </alim_ssgrp_nom_eng>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
       <alim_ssssgrp_nom_fr> - </alim_ssssgrp_nom_fr>
       <alim_ssssgrp_nom_eng> - </alim_ssssgrp_nom_eng>
@@ -1455,7 +1455,7 @@
    <ALIM_GRP>
       <alim_grp_code> 11 </alim_grp_code>
       <alim_grp_nom_fr> aliments infantiles </alim_grp_nom_fr>
-      <alim_grp_nom_eng> baby food </alim_grp_nom_eng>
+      <alim_grp_nom_eng> baby alimentBasique </alim_grp_nom_eng>
       <alim_ssgrp_code> 1101 </alim_ssgrp_code>
       <alim_ssgrp_nom_fr> laits et boissons infantiles </alim_ssgrp_nom_fr>
       <alim_ssgrp_nom_eng> baby milk and beverages </alim_ssgrp_nom_eng>
@@ -1466,7 +1466,7 @@
    <ALIM_GRP>
       <alim_grp_code> 11 </alim_grp_code>
       <alim_grp_nom_fr> aliments infantiles </alim_grp_nom_fr>
-      <alim_grp_nom_eng> baby food </alim_grp_nom_eng>
+      <alim_grp_nom_eng> baby alimentBasique </alim_grp_nom_eng>
       <alim_ssgrp_code> 1102 </alim_ssgrp_code>
       <alim_ssgrp_nom_fr> petits pots salés et plats infantiles </alim_ssgrp_nom_fr>
       <alim_ssgrp_nom_eng> baby dishes </alim_ssgrp_nom_eng>
@@ -1477,7 +1477,7 @@
    <ALIM_GRP>
       <alim_grp_code> 11 </alim_grp_code>
       <alim_grp_nom_fr> aliments infantiles </alim_grp_nom_fr>
-      <alim_grp_nom_eng> baby food </alim_grp_nom_eng>
+      <alim_grp_nom_eng> baby alimentBasique </alim_grp_nom_eng>
       <alim_ssgrp_code> 1103 </alim_ssgrp_code>
       <alim_ssgrp_nom_fr> desserts infantiles </alim_ssgrp_nom_fr>
       <alim_ssgrp_nom_eng> baby deserts </alim_ssgrp_nom_eng>
@@ -1488,7 +1488,7 @@
    <ALIM_GRP>
       <alim_grp_code> 11 </alim_grp_code>
       <alim_grp_nom_fr> aliments infantiles </alim_grp_nom_fr>
-      <alim_grp_nom_eng> baby food </alim_grp_nom_eng>
+      <alim_grp_nom_eng> baby alimentBasique </alim_grp_nom_eng>
       <alim_ssgrp_code> 1104 </alim_ssgrp_code>
       <alim_ssgrp_nom_fr> céréales et biscuits infantiles </alim_ssgrp_nom_fr>
       <alim_ssgrp_nom_eng> baby biscuits and cereals </alim_ssgrp_nom_eng>

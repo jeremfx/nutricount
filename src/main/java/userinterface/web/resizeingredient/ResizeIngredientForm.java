@@ -1,29 +1,30 @@
 package userinterface.web.resizeingredient;
 
-import core.domain.food.FoodId;
-import core.domain.food.RecipeId;
-import core.domain.food.Size;
-import userinterface.web.HtmlFragment;
+import core.domain.food.IdentifiantAliment;
+import core.domain.food.IdentifiantRecette;
+import core.domain.food.Poids;
+import userinterface.web.technical.HtmlFragment;
+import userinterface.web.HttpRoutes;
 
 import java.util.List;
 import java.util.Map;
 
 public class ResizeIngredientForm implements HtmlFragment {
 
-    private final RecipeId recipeId;
-    private final FoodId foodId;
-    private final Size size;
+    private final IdentifiantRecette identifiantRecette;
+    private final IdentifiantAliment identifiantAliment;
+    private final Poids poids;
 
-    public ResizeIngredientForm(RecipeId recipeId, FoodId foodId, Size size) {
-        this.recipeId = recipeId;
-        this.foodId = foodId;
-        this.size = size;
+    public ResizeIngredientForm(IdentifiantRecette identifiantRecette, IdentifiantAliment identifiantAliment, Poids poids) {
+        this.identifiantRecette = identifiantRecette;
+        this.identifiantAliment = identifiantAliment;
+        this.poids = poids;
     }
 
     public static ResizeIngredientFormModel parseResponse(Map<String, List<String>> form) {
         return new ResizeIngredientFormModel(
-                new FoodId(Integer.valueOf(form.get("foodId").get(0))),
-                new Size(Integer.valueOf(form.get("newSize").get(0)))
+                new IdentifiantAliment(Integer.valueOf(form.get("identifiantAliment").get(0))),
+                new Poids(Integer.valueOf(form.get("newPoids").get(0)))
         );
     }
 
@@ -32,14 +33,14 @@ public class ResizeIngredientForm implements HtmlFragment {
     public String render() {
         return """
                 <form style="display: inline-block;"  action="%s" method="post">
-                    <input type="hidden" name="foodId" value="%s">
-                    <input type="number" id="newSize" name="newSize" value="%s">
+                    <input type="hidden" name="identifiantAliment" value="%s">
+                    <input type="number" id="newPoids" name="newPoids" value="%s">
                     <button type="submit">Ok</button>
                 </form>
-                """.formatted(renderAction(), foodId, size.size());
+                """.formatted(renderAction(), identifiantAliment, poids.size());
     }
 
     private String renderAction() {
-        return "/recipes/" + recipeId + "/resize-ingredient";
+        return HttpRoutes.REAJUSTER_INGREDIENT.path.replace("{id}", identifiantRecette.toString());
     }
 }

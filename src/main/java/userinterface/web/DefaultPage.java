@@ -1,5 +1,7 @@
 package userinterface.web;
 
+import userinterface.web.technical.HtmlFragment;
+
 public class DefaultPage implements HtmlFragment {
 
     private final HtmlFragment content;
@@ -25,15 +27,15 @@ public class DefaultPage implements HtmlFragment {
                     <div style="display: flex; align-items: center;">
                         <h1 style="margin-right: 50px;"><a href="/?search-term=all">Nutricount</a></h1>
                         %s
-                        <h1 style="margin-left: 50px;"><a href="/recipes">Recettes</a></h1>
+                        <h1 style="margin-left: 50px;"><a href="/recettes">Recettes</a></h1>
                     </div>
                         %s
-                </body>
                 <script>
                     window.onload = function() {
                         document.getElementById('search-term').focus();
                     };
                 </script>
+                </body>
                 </html>
                 """.formatted(searchBar.render(), content.render());
     }

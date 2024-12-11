@@ -1,8 +1,8 @@
 package core.domain.food;
 
-public record Size(Integer size) {
+public record IdentifiantAliment(Integer id) {
     @Override
     public String toString() {
-        return size.toString();
+        return id.toString();
     }
 }

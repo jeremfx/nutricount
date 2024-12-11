@@ -1,7 +1,7 @@
 package userinterface.web.resizeingredient;
 
-import core.domain.food.FoodId;
-import core.domain.food.Size;
+import core.domain.food.IdentifiantAliment;
+import core.domain.food.Poids;
 
-public record ResizeIngredientFormModel(FoodId foodId, Size newSize) {
+public record ResizeIngredientFormModel(IdentifiantAliment identifiantAliment, Poids newPoids) {
 }

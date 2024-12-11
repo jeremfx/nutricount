@@ -1,9 +1,9 @@
 package infrastructure.persistence.ciqual;
 
 import core.application.repository.FoodRepository;
-import core.domain.food.Food;
-import core.domain.food.FoodGroup;
-import core.domain.food.FoodId;
+import core.domain.food.AlimentBasique;
+import core.domain.food.Famille;
+import core.domain.food.IdentifiantAliment;
 import core.domain.food.Macros;
 import infrastructure.persistence.ciqual.compositions.CompositionXml;
 import infrastructure.persistence.ciqual.foodgroups.FoodGroupXml;
@@ -17,10 +17,10 @@ import java.util.stream.Collectors;
 public class FoodRepositoryCiqual implements FoodRepository {
 
     CiqualReader ciqualReader = new CiqualReader();
-    List<Food> foods = ciqualReader.foodsXml.stream().map(f -> createFood(f, findFoodGroupByCode(f.groupCode, ciqualReader.foodGroupsXml))).toList();
+    List<AlimentBasique> alimentBasiques = ciqualReader.foodsXml.stream().map(f -> createFood(f, findFoodGroupByCode(f.groupCode, ciqualReader.foodGroupsXml))).toList();
 
-    private Food createFood(FoodXml foodXml, FoodGroupXml foodGroupXml) {
-        return new Food(new FoodId(foodXml.code), foodXml.name, createFoodGroup(foodGroupXml), createMacros(foodXml.code));
+    private AlimentBasique createFood(FoodXml foodXml, FoodGroupXml foodGroupXml) {
+        return new AlimentBasique(new IdentifiantAliment(foodXml.code), foodXml.name, createFoodGroup(foodGroupXml), createMacros(foodXml.code));
     }
 
     private Macros createMacros(Integer foodCode) {
@@ -130,30 +130,30 @@ public class FoodRepositoryCiqual implements FoodRepository {
         return foodGroupsXml.stream().filter(fg -> fg.code.equals(groupCode)).findFirst().orElse(foodGroupNullObject);
     }
 
-    private FoodGroup createFoodGroup(FoodGroupXml foodGroupXml) {
-        return new FoodGroup(foodGroupXml.name);
+    private Famille createFoodGroup(FoodGroupXml foodGroupXml) {
+        return new Famille(foodGroupXml.name);
     }
 
     @Override
-    public Food getFood(FoodId id) {
-        return foods.stream().filter(f -> f.id().equals(id)).findFirst().orElseThrow();
+    public AlimentBasique getFood(IdentifiantAliment id) {
+        return alimentBasiques.stream().filter(f -> f.id().equals(id)).findFirst().orElseThrow();
     }
 
     @Override
-    public Optional<Food> findFoodByName(String foodName) {
-        return foods.stream().filter(f -> f.name().equalsIgnoreCase(foodName)).findFirst();
+    public Optional<AlimentBasique> findFoodByName(String foodName) {
+        return alimentBasiques.stream().filter(f -> f.nom().equalsIgnoreCase(foodName)).findFirst();
     }
 
     @Override
-    public List<Food> searchFoodByName(String searchTerm) {
+    public List<AlimentBasique> searchFoodByName(String searchTerm) {
         if (searchTerm == null || searchTerm.isEmpty()) {
             return List.of();
         }
-        return foods.stream().filter(f -> f.name().toLowerCase().contains(searchTerm.toLowerCase())).toList();
+        return alimentBasiques.stream().filter(f -> f.nom().toLowerCase().contains(searchTerm.toLowerCase())).toList();
     }
 
     @Override
-    public List<Food> getFoods() {
-        return foods;
+    public List<AlimentBasique> getFoods() {
+        return alimentBasiques;
     }
 }

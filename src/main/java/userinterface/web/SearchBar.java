@@ -1,14 +1,15 @@
 package userinterface.web;
 
-import core.domain.food.RecipeId;
+import core.domain.food.IdentifiantRecette;
+import userinterface.web.technical.HtmlFragment;
 
 import java.util.Optional;
 
 public class SearchBar implements HtmlFragment {
 
-    private final Optional<RecipeId> currentRecipe;
+    private final Optional<IdentifiantRecette> currentRecipe;
 
-    public SearchBar(Optional<RecipeId> currentRecipe) {
+    public SearchBar(Optional<IdentifiantRecette> currentRecipe) {
         this.currentRecipe = currentRecipe;
     }
 
@@ -25,6 +26,6 @@ public class SearchBar implements HtmlFragment {
     }
 
     private String renderAction() {
-        return currentRecipe.map(id -> "/recipes/" + id.id().toString()).orElse("/");
+        return currentRecipe.map(id -> HttpRoutes.LIRE_RECETTE.path.replace("{id}", id.toString())).orElse("/");
     }
 }

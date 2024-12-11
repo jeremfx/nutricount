@@ -1,7 +1,7 @@
 package userinterface.web.addingredient;
 
-import core.domain.food.FoodId;
-import core.domain.food.Size;
+import core.domain.food.IdentifiantAliment;
+import core.domain.food.Poids;
 
-public record AddIngredientFormModel(FoodId id, Size size) {
+public record AddIngredientFormModel(IdentifiantAliment identifiantAliment, Poids poids) {
 }

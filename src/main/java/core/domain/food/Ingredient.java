@@ -2,25 +2,25 @@ package core.domain.food;
 
 import java.util.Objects;
 
-public record Ingredient(Food food, Size size) {
+public record Ingredient(AlimentBasique alimentBasique, Poids poids) {
     public Ingredient {
-        Objects.requireNonNull(food);
-        Objects.requireNonNull(size);
+        Objects.requireNonNull(alimentBasique);
+        Objects.requireNonNull(poids);
     }
 
     public Double calories(){
-        return food.calories() * size.size() / 100;
+        return alimentBasique.calories() * poids.size() / 100;
     }
 
     public Double proteines() {
-        return food.protein() * size.size() / 100;
+        return alimentBasique.proteines() * poids.size() / 100;
     }
 
     public Double carbs() {
-        return food.carbohydrate() * size.size() / 100;
+        return alimentBasique.glucides() * poids.size() / 100;
     }
 
     public Double fats() {
-        return food.fat() * size.size() / 100;
+        return alimentBasique.lipides() * poids.size() / 100;
     }
 }

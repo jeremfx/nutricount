@@ -1183,7 +1183,7 @@
       <alim_code> 4048 </alim_code>
       <alim_nom_fr> Pomme de terre, cuite (aliment moyen) </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Pomme de terre </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Potato, cooked (average food) </alim_nom_eng>
+      <alim_nom_eng> Potato, cooked (average alimentBasique) </alim_nom_eng>
       <alim_grp_code> 02 </alim_grp_code>
       <alim_ssgrp_code> 0202 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
@@ -2785,7 +2785,7 @@
       <alim_code> 7600 </alim_code>
       <alim_nom_fr> Viennoiserie (aliment moyen) </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Viennoiserie </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Pastry, average food </alim_nom_eng>
+      <alim_nom_eng> Pastry, average alimentBasique </alim_nom_eng>
       <alim_grp_code> 07 </alim_grp_code>
       <alim_ssgrp_code> 0705 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
@@ -8419,7 +8419,7 @@
       <alim_code> 13157 </alim_code>
       <alim_nom_fr> Petit pot fruit avec banane pour bébé </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Petit pot fruit avec banane pour bébé </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Baby food jar with banana </alim_nom_eng>
+      <alim_nom_eng> Baby alimentBasique jar with banana </alim_nom_eng>
       <alim_grp_code> 11 </alim_grp_code>
       <alim_ssgrp_code> 1103 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
@@ -8428,7 +8428,7 @@
       <alim_code> 13158 </alim_code>
       <alim_nom_fr> Petit pot fruit sans banane pour bébé </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Petit pot fruit sans banane pour bébé </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Baby food jar without banana </alim_nom_eng>
+      <alim_nom_eng> Baby alimentBasique jar without banana </alim_nom_eng>
       <alim_grp_code> 11 </alim_grp_code>
       <alim_ssgrp_code> 1103 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
@@ -8653,7 +8653,7 @@
       <alim_code> 13186 </alim_code>
       <alim_nom_fr> Olive noire (aliment moyen) </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Olive noire </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Olives, black (average food) </alim_nom_eng>
+      <alim_nom_eng> Olives, black (average alimentBasique) </alim_nom_eng>
       <alim_grp_code> 10 </alim_grp_code>
       <alim_ssgrp_code> 1002 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
@@ -14476,7 +14476,7 @@
       <alim_code> 20246 </alim_code>
       <alim_nom_fr> Petit pot légumes, dès 4-6 mois </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Petit pot légumes, dès 4-6 mois </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Baby food jar with vegetables, from 4-6 months </alim_nom_eng>
+      <alim_nom_eng> Baby alimentBasique jar with vegetables, from 4-6 months </alim_nom_eng>
       <alim_grp_code> 11 </alim_grp_code>
       <alim_ssgrp_code> 1102 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
@@ -14485,7 +14485,7 @@
       <alim_code> 20247 </alim_code>
       <alim_nom_fr> Petit pot légumes, avec féculent, dès 4/6 mois </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Petit pot légumes, avec féculent, dès 4/6 mois </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Baby food jar with vegetables and starch, from 4-6 months </alim_nom_eng>
+      <alim_nom_eng> Baby alimentBasique jar with vegetables and starch, from 4-6 months </alim_nom_eng>
       <alim_grp_code> 11 </alim_grp_code>
       <alim_ssgrp_code> 1102 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
@@ -19523,36 +19523,36 @@
    </ALIM>
    <ALIM>
       <alim_code> 25413 </alim_code>
-      <alim_nom_fr> Hamburger, provenant de fast food </alim_nom_fr>
+      <alim_nom_fr> Hamburger, provenant de fast alimentBasique </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Hamburger </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Hamburger, from fast foods restaurant </alim_nom_eng>
+      <alim_nom_eng> Hamburger, from fast alimentBasiques restaurant </alim_nom_eng>
       <alim_grp_code> 01 </alim_grp_code>
       <alim_ssgrp_code> 0105 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
    </ALIM>
    <ALIM>
       <alim_code> 25414 </alim_code>
-      <alim_nom_fr> Cheeseburger, provenant de fast food </alim_nom_fr>
+      <alim_nom_fr> Cheeseburger, provenant de fast alimentBasique </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Cheeseburger </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Cheeseburger, from fast foods restaurant </alim_nom_eng>
+      <alim_nom_eng> Cheeseburger, from fast alimentBasiques restaurant </alim_nom_eng>
       <alim_grp_code> 01 </alim_grp_code>
       <alim_ssgrp_code> 0105 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
    </ALIM>
    <ALIM>
       <alim_code> 25415 </alim_code>
-      <alim_nom_fr> Double cheeseburger, provenant de fast food </alim_nom_fr>
+      <alim_nom_fr> Double cheeseburger, provenant de fast alimentBasique </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Double cheeseburger </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Cheeseburger, double, from fast foods restaurant </alim_nom_eng>
+      <alim_nom_eng> Cheeseburger, double, from fast alimentBasiques restaurant </alim_nom_eng>
       <alim_grp_code> 01 </alim_grp_code>
       <alim_ssgrp_code> 0105 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
    </ALIM>
    <ALIM>
       <alim_code> 25416 </alim_code>
-      <alim_nom_fr> Burger au poisson, provenant de fast food </alim_nom_fr>
+      <alim_nom_fr> Burger au poisson, provenant de fast alimentBasique </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Mc Fish Filet-o-fish Fish burger </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Fish burger, fast foods restaurant,from fast-food </alim_nom_eng>
+      <alim_nom_eng> Fish burger, fast alimentBasiques restaurant,from fast-alimentBasique </alim_nom_eng>
       <alim_grp_code> 01 </alim_grp_code>
       <alim_ssgrp_code> 0105 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
@@ -19840,7 +19840,7 @@
       <alim_code> 25502 </alim_code>
       <alim_nom_fr> Burger au poulet </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Supreme chicken Mc chicken </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Chicken burger , fast foods restaurant </alim_nom_eng>
+      <alim_nom_eng> Chicken burger , fast alimentBasiques restaurant </alim_nom_eng>
       <alim_grp_code> 01 </alim_grp_code>
       <alim_ssgrp_code> 0105 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
@@ -20380,7 +20380,7 @@
       <alim_code> 25573 </alim_code>
       <alim_nom_fr> Tarte ou quiche salée (aliment moyen) </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Tarte ou quiche salée </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Savoury tart (average food) </alim_nom_eng>
+      <alim_nom_eng> Savoury tart (average alimentBasique) </alim_nom_eng>
       <alim_grp_code> 01 </alim_grp_code>
       <alim_ssgrp_code> 0104 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
@@ -25780,7 +25780,7 @@
       <alim_code> 32139 </alim_code>
       <alim_nom_fr> Muesli enrichi en vitamines et minéraux (aliment moyen) </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Muesli </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Muesli, flakes, fortified with vitamins and chemical elements (average food) </alim_nom_eng>
+      <alim_nom_eng> Muesli, flakes, fortified with vitamins and chemical elements (average alimentBasique) </alim_nom_eng>
       <alim_grp_code> 07 </alim_grp_code>
       <alim_ssgrp_code> 0707 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
@@ -25798,7 +25798,7 @@
       <alim_code> 32141 </alim_code>
       <alim_nom_fr> Muesli non enrichi en vitamines et minéraux (aliment moyen) </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Muesli </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Muesli, flakes, not fortified with vitamins and chemical elements (average food) </alim_nom_eng>
+      <alim_nom_eng> Muesli, flakes, not fortified with vitamins and chemical elements (average alimentBasique) </alim_nom_eng>
       <alim_grp_code> 07 </alim_grp_code>
       <alim_ssgrp_code> 0707 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>
@@ -26660,9 +26660,9 @@
    </ALIM>
    <ALIM>
       <alim_code> 39001 </alim_code>
-      <alim_nom_fr> Milk-shake, provenant de fast food </alim_nom_fr>
+      <alim_nom_fr> Milk-shake, provenant de fast alimentBasique </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Milk-shake </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Milkshake, from fast foods restaurant </alim_nom_eng>
+      <alim_nom_eng> Milkshake, from fast alimentBasiques restaurant </alim_nom_eng>
       <alim_grp_code> 05 </alim_grp_code>
       <alim_ssgrp_code> 0502 </alim_ssgrp_code>
       <alim_ssssgrp_code> 050203 </alim_ssssgrp_code>
@@ -26941,7 +26941,7 @@
       <alim_code> 39509 </alim_code>
       <alim_nom_fr> Glace ou crème glacée, cône (taille standard) </alim_nom_fr>
       <ALIM_NOM_INDEX_FR> Cône glacé </ALIM_NOM_INDEX_FR>
-      <alim_nom_eng> Ice cream, cone (normal size) </alim_nom_eng>
+      <alim_nom_eng> Ice cream, cone (normal poids) </alim_nom_eng>
       <alim_grp_code> 08 </alim_grp_code>
       <alim_ssgrp_code> 0801 </alim_ssgrp_code>
       <alim_ssssgrp_code> 000000 </alim_ssssgrp_code>

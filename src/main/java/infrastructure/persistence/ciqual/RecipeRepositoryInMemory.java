@@ -1,31 +1,31 @@
 package infrastructure.persistence.ciqual;
 
 import core.application.repository.RecipeRepository;
-import core.domain.food.Recipe;
-import core.domain.food.RecipeId;
+import core.domain.food.IdentifiantRecette;
+import core.domain.food.Recette;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class RecipeRepositoryInMemory implements RecipeRepository {
-    private final Set<Recipe> recipes = new HashSet<>();
+    private final Set<Recette> recettes = new HashSet<>();
 
     @Override
-    public void saveRecipe(Recipe recipe) {
-        if(recipes.contains(recipe)){
-            recipes.remove(recipe);
+    public void saveRecipe(Recette recette) {
+        if(recettes.contains(recette)){
+            recettes.remove(recette);
         }
-        recipes.add(recipe);
+        recettes.add(recette);
     }
 
     @Override
-    public Recipe getRecipe(RecipeId id) {
-        return recipes.stream().filter(r -> r.id.equals(id)).findFirst().orElseThrow();
+    public Recette getRecipe(IdentifiantRecette id) {
+        return recettes.stream().filter(r -> r.id.equals(id)).findFirst().orElseThrow();
     }
 
     @Override
-    public List<Recipe> getRecipes() {
-        return recipes.stream().toList();
+    public List<Recette> getRecipes() {
+        return recettes.stream().toList();
     }
 }

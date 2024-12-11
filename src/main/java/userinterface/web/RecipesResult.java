@@ -1,16 +1,16 @@
 package userinterface.web;
 
 import core.domain.food.Ingredient;
-import core.domain.food.Recipe;
-import core.domain.food.RecipeId;
+import core.domain.food.Recette;
+import userinterface.web.technical.HtmlFragment;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RecipesResult implements HtmlFragment{
-    private final List<Recipe> recipes;
-    public RecipesResult(List<Recipe> recipes) {
-        this.recipes = recipes;
+public class RecipesResult implements HtmlFragment {
+    private final List<Recette> recettes;
+    public RecipesResult(List<Recette> recettes) {
+        this.recettes = recettes;
     }
 
     @Override
@@ -23,21 +23,21 @@ public class RecipesResult implements HtmlFragment{
     }
 
     private String renderRecipes() {
-        if(recipes.isEmpty()){
+        if(recettes.isEmpty()){
             return "Pas encore de recettes !";
         }
-        return recipes.stream().map(this::renderRecipe).collect(Collectors.joining(System.lineSeparator()));
+        return recettes.stream().map(this::renderRecipe).collect(Collectors.joining(System.lineSeparator()));
     }
 
-    private String renderRecipe(Recipe recipe) {
+    private String renderRecipe(Recette recette) {
         return """
                 <li>
-                    <h3><a href="/recipes/%s">Recipe n° %s</a></h3>
+                    <h3><a href="/recettes/%s">%s</a></h3>
                     <ul>
                         %s
                     </ul>
                 </li>
-                """.formatted(recipe.id, recipe.id, renderIngredients(recipe.getIngredients()));
+                """.formatted(recette.id, recette.nom, renderIngredients(recette.getIngredients()));
     }
 
     private String renderIngredients(List<Ingredient> ingredients) {
@@ -49,6 +49,6 @@ public class RecipesResult implements HtmlFragment{
                 <li>
                     %s %sg
                 </li>
-                """.formatted(ingredient.food().name(), ingredient.size());
+                """.formatted(ingredient.alimentBasique().nom(), ingredient.poids());
     }
 }

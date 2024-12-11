@@ -7,7 +7,7 @@ import core.domain.food.*;
 import java.util.List;
 import java.util.Optional;
 
-public class Core {
+public class Core implements CoreShared {
 
     private final FoodRepository foodRepository;
     private final RecipeRepository recipeRepository;
@@ -17,40 +17,55 @@ public class Core {
         this.recipeRepository = recipeRepository;
     }
 
-    public Optional<Food> findFoodByName(String foodName) {
+    @Override
+    public Optional<AlimentBasique> findFoodByName(String foodName) {
         return foodRepository.findFoodByName(foodName);
     }
 
-    public List<Food> searchFoodByName(String searchTerm) {
+    @Override
+    public List<AlimentBasique> searchFoodByName(String searchTerm) {
         return foodRepository.searchFoodByName(searchTerm);
     }
-    public List<Food> getFoods() {
+    @Override
+    public List<AlimentBasique> getFoods() {
         return foodRepository.getFoods();
     }
 
-    public RecipeId createRecipe(FoodId foodId,  Size size) {
-        Recipe recipe = new Recipe(List.of(new Ingredient(foodRepository.getFood(foodId), size)));
-        recipeRepository.saveRecipe(recipe);
-        return recipe.id;
+    @Override
+    public IdentifiantRecette createRecipe(IdentifiantAliment identifiantAliment, Poids poids) {
+        Recette recette = new Recette(List.of(new Ingredient(foodRepository.getFood(identifiantAliment), poids)));
+        recipeRepository.saveRecipe(recette);
+        return recette.id;
     }
 
-    public Recipe getRecipe(RecipeId id) {
+    @Override
+    public Recette getRecipe(IdentifiantRecette id) {
         return recipeRepository.getRecipe(id);
     }
 
-    public void addIngredient(RecipeId id, FoodId foodId,  Size size){
-        Recipe recipe = recipeRepository.getRecipe(id);
-        Recipe updatedRecipe = recipe.addIngredient(new Ingredient(foodRepository.getFood(foodId), size));
-        recipeRepository.saveRecipe(updatedRecipe);
+    @Override
+    public void addIngredient(IdentifiantRecette id, IdentifiantAliment identifiantAliment, Poids poids){
+        Recette recette = recipeRepository.getRecipe(id);
+        Recette updatedRecette = recette.ajouterIngredient(new Ingredient(foodRepository.getFood(identifiantAliment), poids));
+        recipeRepository.saveRecipe(updatedRecette);
     }
 
-    public List<Recipe> getRecipes() {
+    @Override
+    public List<Recette> getRecipes() {
         return recipeRepository.getRecipes();
     }
 
-    public void resizeIngredient(RecipeId id, FoodId foodId, Size newSize){
-        Recipe recipe = recipeRepository.getRecipe(id);
-        Recipe updatedRecipe = recipe.resizeIngredient(foodId, newSize);
-        recipeRepository.saveRecipe(updatedRecipe);
+    @Override
+    public void resizeIngredient(IdentifiantRecette id, IdentifiantAliment identifiantAliment, Poids newPoids){
+        Recette recette = recipeRepository.getRecipe(id);
+        Recette updatedRecette = recette.reajusterIngredient(identifiantAliment, newPoids);
+        recipeRepository.saveRecipe(updatedRecette);
+    }
+
+    @Override
+    public void renameRecipe(IdentifiantRecette id, String newName) {
+        Recette recette = recipeRepository.getRecipe(id);
+        Recette updatedRecette = recette.renommer(newName);
+        recipeRepository.saveRecipe(updatedRecette);
     }
 }

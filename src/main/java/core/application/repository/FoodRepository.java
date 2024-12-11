@@ -1,16 +1,16 @@
 package core.application.repository;
 
-import core.domain.food.Food;
-import core.domain.food.FoodId;
+import core.domain.food.AlimentBasique;
+import core.domain.food.IdentifiantAliment;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface FoodRepository {
-    Food getFood(FoodId id);
-    Optional<Food> findFoodByName(String foodName);
+    AlimentBasique getFood(IdentifiantAliment id);
+    Optional<AlimentBasique> findFoodByName(String foodName);
 
-    List<Food> searchFoodByName(String searchTerm);
+    List<AlimentBasique> searchFoodByName(String searchTerm);
 
-    List<Food> getFoods();
+    List<AlimentBasique> getFoods();
 }

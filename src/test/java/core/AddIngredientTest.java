@@ -12,10 +12,10 @@ class AddIngredientTest {
 
     @Test
     void test() {
-        RecipeId id = core.createRecipe(new FoodId(1), new Size(100));
-        Food food = core.findFoodByName("poire").get();
-        core.addIngredient(id, food.id(), new Size(100));
-        Recipe recipe = core.getRecipe(id);
-        assertEquals(2, recipe.getIngredients().size());
+        IdentifiantRecette id = core.createRecipe(new IdentifiantAliment(1), new Poids(100));
+        AlimentBasique alimentBasique = core.findFoodByName("poire").get();
+        core.addIngredient(id, alimentBasique.id(), new Poids(100));
+        Recette recette = core.getRecipe(id);
+        assertEquals(2, recette.getIngredients().size());
     }
 }

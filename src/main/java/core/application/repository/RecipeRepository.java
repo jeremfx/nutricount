@@ -1,15 +1,15 @@
 package core.application.repository;
 
-import core.domain.food.Recipe;
-import core.domain.food.RecipeId;
+import core.domain.food.Recette;
+import core.domain.food.IdentifiantRecette;
 
 import java.util.List;
 
 
 public interface RecipeRepository {
-    void saveRecipe(Recipe recipe);
+    void saveRecipe(Recette recette);
 
-    Recipe getRecipe(RecipeId id);
+    Recette getRecipe(IdentifiantRecette id);
 
-    List<Recipe> getRecipes();
+    List<Recette> getRecipes();
 }
